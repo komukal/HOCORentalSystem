@@ -1,6 +1,7 @@
 package HOCOrent.reservation.web;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -10,8 +11,13 @@ public class ReservationController {
 		return "index";
 	}
 	
-	@RequestMapping(value = "/varaus")
+	@RequestMapping(value = "/reservations")
 	public String varaus() {
-		return "index";
+		return "overview";
+	}
+	
+	@RequestMapping(value = "/reservations/reserve")
+	public String reserve(Model model) {
+		return "reservationForm";
 	}
 }
